@@ -31,4 +31,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
           publish_branch: gh-pages
-          commit_message: "Deploy from main at $(date +'%Y-%m-%d %H:%M:%S')"
+          commit_message: "Deploy from main"
