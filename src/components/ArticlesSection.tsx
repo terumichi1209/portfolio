@@ -22,8 +22,12 @@ const ArticlesSection: React.FC = () => {
                 }));
 
                 setQiitaArticles(mappedArticles);
-            } catch (err: any) {
-                console.error("Failed to fetch Qiita articles:", err);
+            } catch (err: unknown) {
+                if (err instanceof Error) {
+                    console.error("Failed to fetch Qiita articles:", err.message);
+                } else {
+                    console.error("Failed to fetch Qiita articles:", err);
+                }
             } finally {
                 setLoading(false);
             }
