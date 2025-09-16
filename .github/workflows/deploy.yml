@@ -31,4 +31,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
           publish_branch: gh-pages
-          force_orphan: true  # 履歴を残さないなら
+          commit_message: "Deploy from main at $(date +'%Y-%m-%d %H:%M:%S')"
