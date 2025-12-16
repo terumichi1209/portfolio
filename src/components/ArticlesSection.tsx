@@ -1,55 +1,24 @@
-'use client';
-
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { ArticleItem } from '@/types/portfolio';
-import { fetchQiitaArticles, formatDate } from '@/lib/qiitaApi';
-import {portfolioData} from "@/data/portfolioData";
+import { formatDate } from '@/lib/qiitaApi';
 
-const ArticlesSection: React.FC = () => {
-    const [qiitaArticles, setQiitaArticles] = useState<ArticleItem[]>(portfolioData.articles);
-    const [loading, setLoading] = useState<boolean>(false);
+interface ArticlesSectionProps {
+    articles: ArticleItem[];
+}
 
-    useEffect(() => {
-        const loadArticles = async () => {
-            setLoading(true);
-            try {
-                const fetchedArticles = await fetchQiitaArticles(100);
-
-                const mappedArticles: ArticleItem[] = fetchedArticles.map(item => ({
-                    title: item.title,
-                    url: item.url,
-                    createdAt: item.created_at,
-                }));
-
-                setQiitaArticles(mappedArticles);
-            } catch (err: unknown) {
-                if (err instanceof Error) {
-                    console.error("Failed to fetch Qiita articles:", err.message);
-                } else {
-                    console.error("Failed to fetch Qiita articles:", err);
-                }
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        loadArticles();
-    }, []);
-
+const ArticlesSection: React.FC<ArticlesSectionProps> = ({ articles }) => {
     return (
         <section id="articles" className="py-16 bg-gray-50">
             <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h3 className="text-4xl font-bold text-gray-900 mb-8">
                     Articles (Qiita)
                 </h3>
-                {loading && <p className="text-lg text-gray-600">Loading articles...</p>}
-                {!loading && qiitaArticles.length === 0 && (
+                {articles.length === 0 ? (
                     <p className="text-lg text-gray-600">No articles found.</p>
-                )}
-                {!loading && qiitaArticles.length > 0 && (
+                ) : (
                     <ul className="list-none p-0 m-0 bg-white rounded-xl shadow-md divide-y divide-gray-200">
-                        {qiitaArticles.map((article, index) => (
-                            <li key={index} className="px-6 py-4">
+                        {articles.map((article) => (
+                            <li key={article.url} className="px-6 py-4">
                                 <a
                                     href={article.url}
                                     target="_blank"
