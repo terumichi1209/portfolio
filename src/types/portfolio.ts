@@ -1,41 +1,41 @@
 export interface SkillItem {
-    name: string;
-    description: string;
+  name: string;
+  description: string;
 }
 
 export interface SkillCategory {
-    category: string;
-    items: SkillItem[];
+  category: string;
+  items: SkillItem[];
 }
 
 export interface ProjectItem {
-    title: string;
-    description: string;
-    technologies: string[];
-    imageUrl: string;
-    githubUrl?: string;
-    demoUrl?: string;
-    articleUrl?: string;
+  title: string;
+  description: string;
+  technologies: string[];
+  imageUrl: string;
+  githubUrl?: string;
+  demoUrl?: string;
+  articleUrl?: string;
 }
 
 export interface ArticleItem {
-    title: string;
-    url: string;
-    createdAt: string;
+  title: string;
+  url: string;
+  createdAt: string;
 }
 
 export interface ContactInfo {
-    email: string;
-    github: string;
+  email: string;
+  github: string;
 }
 
 export interface PortfolioData {
-    name: string;
-    occupation: string;
-    avatarUrl: string;
-    about: string;
-    skills: SkillCategory[];
-    projects: ProjectItem[];
-    articles: ArticleItem[];
-    contact: ContactInfo;
+  name: string;
+  occupation: string;
+  avatarUrl: string;
+  about: string;
+  skills: SkillCategory[];
+  projects: ProjectItem[];
+  articles: ArticleItem[];
+  contact: ContactInfo;
 }

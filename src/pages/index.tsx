@@ -1,14 +1,14 @@
 import React from 'react';
 import { GetStaticProps } from 'next';
-import SkillsSection from "@/components/SkillsSection";
-import Header from "@/components/Header";
-import { portfolioData } from "@/data/portfolioData";
-import HeroSection from "@/components/HeroSection";
-import ContactSection from "@/components/ContactSection";
-import ArticlesSection from "@/components/ArticlesSection";
-import ProjectsSection from "@/components/ProjectsSection";
-import { ArticleItem } from "@/types/portfolio";
-import { getArticles } from "@/lib/qiitaApi";
+import SkillsSection from '@/components/SkillsSection';
+import Header from '@/components/Header';
+import { portfolioData } from '@/data/portfolioData';
+import HeroSection from '@/components/HeroSection';
+import ContactSection from '@/components/ContactSection';
+import ArticlesSection from '@/components/ArticlesSection';
+import ProjectsSection from '@/components/ProjectsSection';
+import { ArticleItem } from '@/types/portfolio';
+import { getArticles } from '@/lib/qiitaApi';
 
 interface HomePageProps {
   articles: ArticleItem[];
