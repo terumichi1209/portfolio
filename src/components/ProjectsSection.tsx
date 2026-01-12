@@ -17,8 +17,8 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
                     Codes
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {projects.map((project, index) => (
-                        <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col h-full">
+                    {projects.map((project) => (
+                        <div key={project.title} className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col h-full">
                             <img
                                 src={project.imageUrl}
                                 alt={project.title}

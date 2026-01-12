@@ -31,7 +31,8 @@ export interface ContactInfo {
 
 export interface PortfolioData {
     name: string;
-    title: string;
+    occupation: string;
+    avatarUrl: string;
     about: string;
     skills: SkillCategory[];
     projects: ProjectItem[];

@@ -18,7 +18,11 @@ const HomePage: React.FC<HomePageProps> = ({ articles }) => {
   return (
     <div className="font-inter antialiased text-gray-800">
       <Header name="Portfolio" />
-      <HeroSection />
+      <HeroSection
+        name={portfolioData.name}
+        occupation={portfolioData.occupation}
+        avatarUrl={portfolioData.avatarUrl}
+      />
       <SkillsSection skills={portfolioData.skills} />
       <ProjectsSection projects={portfolioData.projects} />
       <ArticlesSection articles={articles} />

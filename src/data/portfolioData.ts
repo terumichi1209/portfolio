@@ -2,7 +2,8 @@ import { PortfolioData } from '@/types/portfolio';
 
 export const portfolioData: PortfolioData = {
     name: 'Terumichi Ishibashi',
-    title: 'Web Engineer',
+    occupation: 'Web Engineer',
+    avatarUrl: 'https://avatars.githubusercontent.com/u/11495834',
     about: ``,
     skills: [
         {
