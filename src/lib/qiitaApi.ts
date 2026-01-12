@@ -17,7 +17,7 @@ const fetchQiitaArticles = async (perPage: number): Promise<QiitaArticleResponse
   const qiitaAccessToken = process.env.NEXT_QIITA_ACCESS_TOKEN;
   if (!qiitaAccessToken) {
     console.info(
-      'Qiita Access Token is not configured. Please set NEXT_QIITA_ACCESS_TOKEN in your .env file.'
+      'Qiita Access Token is not configured. Please set NEXT_QIITA_ACCESS_TOKEN in your .env file.',
     );
     return [];
   }
@@ -39,7 +39,7 @@ const fetchQiitaArticles = async (perPage: number): Promise<QiitaArticleResponse
   if (!response.ok) {
     const errorData = await response.json();
     throw new Error(
-      `Qiita API Error: ${response.status} - ${errorData.message || response.statusText}`
+      `Qiita API Error: ${response.status} - ${errorData.message || response.statusText}`,
     );
   }
 
